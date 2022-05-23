@@ -1,69 +1,182 @@
 import React from 'react';
 import picture1 from "./images/pic1.webp"
-import picture2 from "./images/pic2.webp"
-import picture3 from "./images/pic3.webp"
-import picture4 from "./images/pic4.webp"
+import picture2 from "./images/pic2.png"
+import picture3 from "./images/pic3.png"
+import picture4 from "./images/pic4.png"
+import picture5 from "./images/pic5.webp"
+
+const Banner = () => {
+    return (
+
+        <div>
+            
+        <div  style={{height:"500px"}} className="carousel w-full">
+<div  id="item1" className="carousel-item  w-full">
+
+ 
+<div  className="grid  grid-cols-2">
+ <div  >
+ <div class="hero  bg-base-200">
+  <div class="hero-content text-center">
+    <div style={{height:"500px"}} class="max-w-md">
+    <img class="mask mask-hexagon mx-auto" src={picture1} />
+      <h1 class="text-5xl font-bold">Hello there</h1>
+      <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
+ </div>
+ <div>
+ <img style={{height:"532px"}} src={picture1} className="w-full " />
+ </div>
+</div>
+</div> 
+<div id="item2" className="carousel-item w-full">
+<div  className="grid grid-cols-2">
+ <div >
+ <div class="hero  bg-base-200">
+  <div class="hero-content text-center">
+    <div style={{height:"500px"}} class="max-w-md">
+    <img class="mask mask-hexagon mx-auto" src={picture2} />
+      <h1 class="text-5xl font-bold">Hello there</h1>
+      <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
+ </div>
+ <div>
+ <img style={{height:"532px"}} src={picture2} className="w-full " />
+ </div>
+</div>
+</div> 
+<div id="item3" className="carousel-item w-full">
+<div  className="grid grid-cols-2">
+ <div >
+ <div class="hero bg-base-200">
+  <div class="hero-content text-center">
+    <div style={{height:"500px"}} class="max-w-md">
+    <img class="mask mask-hexagon mx-auto" src={picture3} />
+      <h1 class="text-5xl font-bold">Hello there</h1>
+      <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
+ </div>
+ <div>
+ <img style={{height:"532px"}} src={picture3} className="w-full " />
+ </div>
+</div>
+</div> 
+<div id="item4" className="carousel-item w-full">
+<div  className="grid grid-cols-2">
+ <div >
+ <div class="hero  bg-base-200">
+  <div class="hero-content text-center">
+    <div style={{height:"500px"}} class="max-w-md">
+    <img class="mask mask-hexagon mx-auto" src={picture4} />
+      <h1 class="text-5xl font-bold">Hello there</h1>
+      <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
+ </div>
+ <div>
+ <img style={{height:"532px"}} src={picture4} className="w-full " />
+ </div>
+</div>
+</div> 
+<div id="item5" className="carousel-item w-full">
+<div  className="grid grid-cols-2">
+ <div >
+ <div class="hero bg-base-200">
+  <div class="hero-content text-center">
+    <div style={{height:"500px"}} class="max-w-md">
+    <img class="mask mask-hexagon mx-auto" src={picture5} />
+      <h1 class="text-5xl font-bold">Hello there</h1>
+      <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
+ </div>
+ <div>
+ <img style={{height:"532px"}} src={picture5} className="w-full " />
+ </div>
+</div>
+</div>
+</div> 
+<div className="flex justify-center w-full py-5 gap-2">
+<a href="#item1" className="btn btn-xs font-bold">1</a> 
+<a href="#item2" className="btn btn-xs font-bold">2</a> 
+<a href="#item3" className="btn btn-xs font-bold">3</a> 
+<a href="#item4" className="btn btn-xs font-bold">4</a>
+<a href="#item5" className="btn btn-xs font-bold">5</a>
+</div>
+    </div>
+       
+    );
+};
+
+export default Banner; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  import React from 'react';
+import picture1 from "./images/pic1.webp"
+import picture2 from "./images/pic2.png"
+import picture3 from "./images/pic3.png"
+import picture4 from "./images/pic4.png"
 import picture5 from "./images/pic5.webp"
 
 const Banner = () => {
     return (
         <div>
-            <div class="carousel w-full">
-  <div id="item1" class="carousel-item w-full">
-    <img src={picture1} class="w-full" />
+            <div className="carousel w-full">
+  <div id="item1" className="carousel-item  w-full">
+    <img style={{height:"500px"}} src={picture1} className="w-full " />
   </div> 
-  <div id="item2" class="carousel-item w-full">
-    <img src={picture2} class="w-full" />
+  <div id="item2" className="carousel-item w-full">
+    <img style={{height:"500px"}} src={picture2} className="w-full" />
   </div> 
-  <div id="item3" class="carousel-item w-full">
-    <img src={picture3} class="w-full" />
+  <div id="item3" className="carousel-item w-full">
+    <img style={{height:"500px"}} src={picture3} className="w-full" />
   </div> 
-  <div id="item4" class="carousel-item w-full">
-    <img src={picture4} class="w-full" />
+  <div id="item4" className="carousel-item w-full">
+    <img style={{height:"500px"}} src={picture4} className="w-full" />
   </div>
-  <div id="item5" class="carousel-item w-full">
-    <img src={picture5} class="w-full" />
+  <div id="item5" className="carousel-item w-full">
+    <img style={{height:"500px"}} src={picture5} className="w-full" />
   </div>
 </div> 
-<div class="flex justify-center w-full py-2 gap-2">
-  <a href="#item1" class="btn btn-xs">1</a> 
-  <a href="#item2" class="btn btn-xs">2</a> 
-  <a href="#item3" class="btn btn-xs">3</a> 
-  <a href="#item4" class="btn btn-xs">4</a>
-  <a href="#item5" class="btn btn-xs">5</a>
+<div className="flex justify-center w-full py-2 gap-2">
+  <a href="#item1" className="btn btn-xs">1</a> 
+  <a href="#item2" className="btn btn-xs">2</a> 
+  <a href="#item3" className="btn btn-xs">3</a> 
+  <a href="#item4" className="btn btn-xs">4</a>
+  <a href="#item5" className="btn btn-xs">5</a>
 </div>
         </div>
-      /*   <div class="carousel w-full">
-        <div id="slide1" class="carousel-item relative w-full">
-          <img src="https://api.lorem.space/image/car?w=800&h=200&hash=8B7BCDC2" class="w-full"/> / 
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" class="btn btn-circle">❮</a> 
-            <a href="#slide2" class="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide2" class="carousel-item relative w-full">
-          <img src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB" class="w-full"/> / 
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" class="btn btn-circle">❮</a> 
-            <a href="#slide3" class="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide3" class="carousel-item relative w-full">
-          <img src="https://api.lorem.space/image/car?w=800&h=200&hash=A89D0DE6" class="w-full"/> / 
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" class="btn btn-circle">❮</a> 
-            <a href="#slide4" class="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide4" class="carousel-item relative w-full">
-          <img src="https://api.lorem.space/image/car?w=800&h=200&hash=225E6693" class="w-full"/> / 
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" class="btn btn-circle">❮</a> 
-            <a href="#slide1" class="btn btn-circle">❯</a>
-          </div>
-        </div>
-      </div> */
     );
 };
 
-export default Banner;
+export default Banner;  */
