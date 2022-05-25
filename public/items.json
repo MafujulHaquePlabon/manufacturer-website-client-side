@@ -1,0 +1,51 @@
+[
+    {
+        "img":"https://img.freepik.com/free-vector/realistic-isolated-hands-driver-car_1284-17520.jpg?t=st=1653356736~exp=1653357336~hmac=9fe866464d443a9d429cc3a9af5d9422aec7c152faa171c2de223830db09493a&w=740",
+"name":"Car Steering Wheel", 
+"price":"20",
+"description":"14in  Carbon  car  steering wheel with aluminum  bracket 1.material:PVC 2.quality :super,elegant and luxury 3.Car model:  Universial Polish and black aluminum spoke steering wheel,racing car steering wheel,car part  vehicle part ,car component 4. Suitable for any car and model 5. Easy to install 6. pvc  Leather With Black Stitching 7.Black Anodized Spokes With Logo" ,
+"available_quantity":"220",
+"minimum_order_quantity":"20"
+
+    },
+    {
+        "img":"https://img.freepik.com/free-vector/vector-aluminum-racing-car-tire-auto-tyres-front-side-view_134830-116.jpg?w=740",
+"name":"Car Tyres", 
+"price":"25",
+"description":"1. our car tyres are produced in sentury,which is a rare 4.0 factory in china 2. We have many years' experience in car tyre design, production, sales and export to world market. 3. All kinds of sizes and patterns are available, small orders are welcomed. 4. our car tyres are produce in sentury,which iss a rare 4.0 factory in china 5. With DOT, ECE, GCC, ISO9001,CCC and Emark, our products have quality assurance. 6. Prompt sample delivery. 7. With high-quality products and best price, we hope to win more customers. " ,
+"available_quantity":"170",
+"minimum_order_quantity":"10"
+    },
+    {
+        "img":"https://img.freepik.com/free-vector/car-wiper-clean-windscreen-glass-windshield-with-rain-drops_107791-3488.jpg?t=st=1653392882~exp=1653393482~hmac=88a07716a147bf7b699d0c890ed91b84fb13aa96642e42fa3590a3438a3b549e&w=1060",
+"name":"Car Glass/Front Windscreen", 
+"price":"23",
+"description":"  Our factory hot sale Glass has kinds of shape and size and we also support to be customized as your request.Our auto glass holds together when shattered. It is held in place by an interlayer PVB between its two or more layers of glass. The interlayer keeps the layers of glass bonded even when broken, and its high strength prevents the glass from breaking up into large sharp pieces. " ,
+"available_quantity":"130",
+"minimum_order_quantity":"10"
+    },
+    {
+        "img":"https://img.freepik.com/free-vector/realistic-car-speedometer-background_134830-838.jpg?t=st=1653396547~exp=1653397147~hmac=e1c90a32330100df5f53ab3e7faa1b58cfac5b3ef58bfaea3f2c663190d1a13d&w=1060",
+"name":"Car Meter Speedometer E724", 
+"price":"150",
+"description":"Adaptable automobile mode:High speed electric vehicle(SUV/Brilliance S30 upgrade)Product introduction:The current signal acquisition mode is CAN bus communication;The motor driving pointer displays the real-time current and electric quantity; LED liquid crystal display real-time running speed and mileage;",
+"available_quantity":"70",
+"minimum_order_quantity":"12"
+    },
+    {
+        "img":"https://img.freepik.com/free-photo/rear-light-modern-car_35148-1261.jpg?w=900",
+"name":"Car Reflector LED Light Tail Lamps ", 
+"price":"18",
+"description":"1.LED Boat Trailer Lights,E4 Trailer Combination Tail Lights,LED Trailer Light 2.High Quality with uv pc lens,100%waterproof 3.E-mark EMC approval" ,
+"available_quantity":"145",
+"minimum_order_quantity":"15"
+    },
+    {
+        "img":"https://img.freepik.com/free-photo/oxygen-sensor-o2-exhaust-pipe-calculating-ingredients-engine-system_41472-674.jpg?w=900",
+"name":"Car Parts Auto Lambda Oxygen Sensor ", 
+"price":"14",
+"description":"1.Gurantee:12 Months 2.Specification:Standard 3.Production Capacity:5000/Month 4.Weight :About 205g" ,
+"available_quantity":"145",
+"minimum_order_quantity":"15"
+    }
+]
