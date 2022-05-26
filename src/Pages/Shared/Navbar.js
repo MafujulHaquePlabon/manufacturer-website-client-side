@@ -4,6 +4,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import CarMLogo from "../Home/images/CarMLogo.webp"
+import userImg from "../Home/images/userImg.jpg"
+
 
 const Navbar = () => {
 
@@ -23,8 +25,12 @@ const Navbar = () => {
         {
             user && <li><Link to="/dashboard"> <button className="font-semibold hover:text-orange-800">Dashboard</button> </Link></li>
         }
+        {
+            user && <li><button className="font-bold text-orange-900 "><img style={{width:"24px",
+            height:"24px"}} src={userImg} alt="" />({user.displayName})</button></li>
+        }
         
-        <li>{user ? <button className="btn btn-ghost font-semibold hover:text-orange-800 " onClick={logout} >Sign Out</button> : <Link to="/Login">Login</Link>}</li>
+        <li>{user ? <button className="btn btn-ghost font-semibold  hover:text-orange-800 " onClick={logout} >Sign Out</button> : <Link to="/Login"><button className="font-semibold hover:text-orange-800">Login</button></Link>}</li>
     </>
     return (
         <div className="navbar bg-base-100 ">
