@@ -21,13 +21,13 @@ const Dashboard = () => {
         <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
           <li>
-            <Link to="/dashboard">MyOrders</Link>
+            <Link to="/dashboard"><button className="font-semibold hover:text-orange-800">MyOrders</button></Link>
           </li>
           <li>
-            <Link to="/dashboard/add_a_review">Add_A_Review</Link>
+            <Link to="/dashboard/add_a_review"><button className="font-semibold hover:text-orange-800">Add_A_Review</button></Link>
           </li>
           <li>
-            <Link to="/dashboard/my_profile">MyProfile</Link>
+            <Link to="/dashboard/my_profile"><button className="font-semibold hover:text-orange-800">MyProfile</button></Link>
           </li>
           {/*  { admin && <>
                         <li><Link to="/dashboard/users">All Users</Link></li>
