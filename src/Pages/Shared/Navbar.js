@@ -17,20 +17,19 @@ const Navbar = () => {
     }; 
 
     const menuItems = <>
-        <li><Link to="/"><button className="font-semibold hover:text-orange-800">Home</button></Link></li>
+        <li><Link to="/"><button className="font-semibold hover:text-orange-800 ">Home</button></Link></li>
         <li><Link to="/carPartsItems"><button className="font-semibold hover:text-orange-800">Purchase</button></Link></li>
        
         <li><Link to="/blog"><button className="font-semibold hover:text-orange-800">Blogs</button></Link></li>
         <li><Link to="/my_portfolio"><button className="font-semibold hover:text-orange-800">My_Portfolio</button></Link></li>
         {
             user && <li><Link to="/dashboard"> <button className="font-semibold hover:text-orange-800">Dashboard</button> </Link></li>
-        }
+        }    
+        <li>{user ? <button className="btn btn-ghost font-semibold  hover:text-orange-800 " onClick={logout} >Sign Out</button> : <Link to="/Login"><button className="font-semibold hover:text-orange-800">Login</button></Link>}</li>
         {
             user && <li><button className="font-bold text-orange-900 "><img style={{width:"24px",
             height:"24px"}} src={userImg} alt="" />({user.displayName})</button></li>
         }
-        
-        <li>{user ? <button className="btn btn-ghost font-semibold  hover:text-orange-800 " onClick={logout} >Sign Out</button> : <Link to="/Login"><button className="font-semibold hover:text-orange-800">Login</button></Link>}</li>
     </>
     return (
         <div className="navbar bg-base-100 ">
