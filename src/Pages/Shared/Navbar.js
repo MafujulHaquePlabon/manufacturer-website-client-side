@@ -15,16 +15,16 @@ const Navbar = () => {
     }; 
 
     const menuItems = <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/carPartsItems">Purchase</Link></li>
+        <li><Link to="/"><button className="font-semibold hover:text-orange-800">Home</button></Link></li>
+        <li><Link to="/carPartsItems"><button className="font-semibold hover:text-orange-800">Purchase</button></Link></li>
        
-        <li><Link to="/blog">Blogs</Link></li>
-        <li><Link to="/my_portfolio">My_Portfolio</Link></li>
+        <li><Link to="/blog"><button className="font-semibold hover:text-orange-800">Blogs</button></Link></li>
+        <li><Link to="/my_portfolio"><button className="font-semibold hover:text-orange-800">My_Portfolio</button></Link></li>
         {
-            user && <li><Link to="/dashboard">Dashboard</Link></li>
+            user && <li><Link to="/dashboard"> <button className="font-semibold hover:text-orange-800">Dashboard</button> </Link></li>
         }
         
-        <li>{user ? <button className="btn btn-ghost" onClick={logout} >Sign Out</button> : <Link to="/Login">Login</Link>}</li>
+        <li>{user ? <button className="btn btn-ghost font-semibold hover:text-orange-800 " onClick={logout} >Sign Out</button> : <Link to="/Login">Login</Link>}</li>
     </>
     return (
         <div className="navbar bg-base-100 ">

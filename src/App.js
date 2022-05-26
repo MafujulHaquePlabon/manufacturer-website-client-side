@@ -5,12 +5,13 @@ import Navbar from './Pages/Shared/Navbar';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/Login/SignUp';
 import Blog from './Pages/Blog/Blog';
-import My_Portfolio from './Pages/My_Portfolio/My_Portfolio';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import RequireAuth from './Pages/Login/RequireAuth';
 import PurchaseItem from './Pages/Purchase/PurchaseItem';
 import AddAReview from './Pages/Dashboard/AddAReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 
 
 function App() {
@@ -24,9 +25,11 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Login" element={<Login></Login>} />
         <Route path="/blog" element={<Blog/>} />
-        <Route path="/my_portfolio" element={<my_portfolio></my_portfolio>} />
+        <Route path="/my_portfolio" element={<MyPortfolio></MyPortfolio>} />
         <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>} >
-       
+        <Route index element={<MyOrders></MyOrders>}></Route> 
+          <Route path="/dashboard/add_a_review" element={<AddAReview></AddAReview>}></Route>
+          <Route path="/dashboard/my_profile" element={<MyProfile></MyProfile>}></Route>
           </Route>
       
       </Routes>
