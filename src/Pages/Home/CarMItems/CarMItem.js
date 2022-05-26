@@ -12,7 +12,7 @@ const CarMItem = (props) => {
     minimum_order_quantity,
   } = props.item;
   const navigate = useNavigate();
-  const navigateToCarMItemDetail = (id) => {
+  const navigateToCarMItemDetail = id => {
     //  console.log(_id)
     navigate(`/carPartsItems/${id}`);
   };

@@ -6,32 +6,26 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 //import { toast } from 'react-toastify';
+import { DayPicker } from 'react-day-picker';
+import 'react-day-picker/dist/style.css';
+import { format } from "date-fns";
+
 
 const PurchaseItem = () => {
   const { id } = useParams();
   const [purchaseItems, setPurchaseItems] = useState({});
   const [reload, SetIsReload] = useState(true);
-  const [qurantityError, SetQurantityError] = useState(true);
-  //console.log(qurantityError)
   const [user, loading, error] = useAuthState(auth);
+  const [date, setDate] = useState(new Date());
+  const formattedDate = format(date, 'PP');
   const { register, formState: { errors }, handleSubmit } = useForm();
   useEffect(() => {
     fetch(` http://localhost:5000/carPartsItems/${id}`)
       .then((res) => res.json())
       .then((data) => setPurchaseItems(data));
-  }, [reload]);
- /*  const handleChangeQuantity = event =>{
-    event.preventDefault();
-    const minQty=purchaseItems.quantity;
-    const userAddQty= event.target.value;
-    if(userAddQty<minQty){
-      //  SetQurantityError(event.target.value);
-      alert("Quantity min!!!");
-      
-    }
-  
-  } */
-  const handleUpdateInventoryItem = (event) => {
+  }, [ reload ]);
+    
+ /*  const handleUpdateInventoryItem = (event) => {
     event.preventDefault();
     const quantity =
       parseInt(event.target.quantity.value) + parseInt(purchaseItems.quantity);
@@ -52,8 +46,8 @@ const PurchaseItem = () => {
         alert("CarPartsItems Quantity added successfully!!!");
         event.target.reset();
       });
-  };
-  const handleDeliveredInventoryItem = () => {
+  }; */
+  /* const handleDeliveredInventoryItem = () => {
     const quantity = parseInt(purchaseItems.available_quantity) - 1;
     const updatedCarPartsItems = { quantity };
     // send data to the server
@@ -71,9 +65,20 @@ const PurchaseItem = () => {
         console.log("success", data);
         alert("CarPartsItems Quantity Delivered successfully!!!");
       });
-  };
+  }; */
+  /*  let handleQuantityBlur =event=>{
+      event.preventDefault()
+     
+      console.log(event.target.value)
+  }  */
   const onSubmit = async data => {
     console.log(data)
+    const orderTotalQty=data.quantity;
+    const purchaseItemPrice=purchaseItems.price;
+    const totalQuantityPrice = parseInt(orderTotalQty)* parseInt(purchaseItemPrice) ;
+    if(totalQuantityPrice){
+      alert(totalQuantityPrice);
+    }
    // await createUserWithEmailAndPassword(data.email, data.password);
    // await updateProfile({ displayName: data.name });
    // console.log('update done');
@@ -121,7 +126,7 @@ const PurchaseItem = () => {
                 <input
                   type="text"
                  name="name"
-                  disabled value={user?.displayName || ''}
+                  disabled defaultValue={user?.displayName || ''}
                   className="input input-bordered input-primary w-full max-w-xs"        
                 />
                 <label className="label">
@@ -134,7 +139,7 @@ const PurchaseItem = () => {
                 <input
                   type="email"
                  name="email"
-                  disabled value={user?.email || ''}
+                  disabled defaultValue={user?.email || ''}
                   className="input input-bordered input-primary w-full max-w-xs"
                 />
                 <label className="label">  
@@ -147,7 +152,7 @@ const PurchaseItem = () => {
                 <input
                   type="text"
                   name="product_name"
-                  disabled value={purchaseItems?.name || ''}
+                  disabled defaultValue={purchaseItems?.name || ''}
                   className="input input-bordered input-primary w-full max-w-xs"
                 />
                 <label className="label">  
@@ -157,7 +162,10 @@ const PurchaseItem = () => {
                 <label className="label">
                   <span className="label-text">Quantity</span>
                 </label>
+            
                 <input
+                 
+                
                   type="number"
                   name="quantity"
                   placeholder="The quantity you want"
@@ -182,6 +190,7 @@ const PurchaseItem = () => {
                                {errors.quantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.quantity.message}</span>} 
                                {errors.quantity?.type === 'max' && <span className="label-text-alt text-red-500">{errors.quantity.message}</span>} 
                                {errors.quantity?.type === 'min' && <span className="label-text-alt text-red-500">{errors.quantity.message}</span>} 
+                               
 
                             </label>
               </div>
@@ -207,10 +216,26 @@ const PurchaseItem = () => {
               </div>
               <div className="form-control w-full max-w-xs">
                 <label className="label">
-                  <span className="label-text">Phone number</span>
+                  <span className="label-text">Date</span>
                 </label>
                 <input
                   type="text"
+                  name="date"
+                  defaultValue={format(date, 'PP')}
+                             
+                  className="input input-bordered input-primary w-full max-w-xs"              
+                />
+                 <label className="label">
+                
+            </label>
+              </div>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Phone number</span>
+                </label>
+                
+                <input
+                  type="number"
                   name="phone"
                   placeholder="Phone number"
                   className="input input-bordered input-primary  w-full max-w-xs"
@@ -226,9 +251,11 @@ const PurchaseItem = () => {
             </label>
               </div>
               <input
-                className="btn btn-accent text-orange-800 font-bold  w-full max-w-xs text-white"
+             
+                disabled={ errors.quantity?.type === 'max' || errors.quantity?.type === 'min'} 
+                className="btn btn-accent text-orange-800 font-bold  w-full max-w-xs  "
                 type="submit"
-                value="Order Place"
+                value="Place Order"
               />
             </form>
           </div>
