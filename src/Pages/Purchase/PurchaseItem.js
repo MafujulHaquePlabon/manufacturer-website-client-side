@@ -105,8 +105,8 @@ const PurchaseItem = () => {
           <h1 className="text-xl font-semibold">
             Minimum_order_quantity: {purchaseItems.minimum_order_quantity}
           </h1>
-          <p>
-            <span className="font-semibold">Description:</span>
+          <p className="font-serif ...">
+            <span className="font-semibold font-serif ...">Description:</span>
             {purchaseItems.description}
           </p>
           <div className="card-actions"></div>

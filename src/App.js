@@ -21,10 +21,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>} />
         <Route path="/home" element={<Home></Home>} />
+        <Route path="/blog" element={<Blog></Blog>} />
         <Route path="/carPartsItems/:id" element={<RequireAuth><PurchaseItem></PurchaseItem></RequireAuth>} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Login" element={<Login></Login>} />
-        <Route path="/blog" element={<Blog/>} />
         <Route path="/my_portfolio" element={<MyPortfolio></MyPortfolio>} />
         <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>} >
         <Route index element={<MyOrders></MyOrders>}></Route> 
