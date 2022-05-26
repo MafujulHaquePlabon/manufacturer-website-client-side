@@ -9,6 +9,8 @@ import My_Portfolio from './Pages/My_Portfolio/My_Portfolio';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import RequireAuth from './Pages/Login/RequireAuth';
 import PurchaseItem from './Pages/Purchase/PurchaseItem';
+import AddAReview from './Pages/Dashboard/AddAReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
 
 
 function App() {
@@ -22,11 +24,10 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Login" element={<Login></Login>} />
         <Route path="/blog" element={<Blog/>} />
-        <Route path="/my_portfolio" element={<My_Portfolio/>} />
-        <Route path="/dashboard" element={
-        <RequireAuth>
-         <Dashboard></Dashboard>
-          </RequireAuth>} />
+        <Route path="/my_portfolio" element={<my_portfolio></my_portfolio>} />
+        <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>} >
+       
+          </Route>
       
       </Routes>
     </div>
