@@ -116,15 +116,13 @@ const PurchaseItem = () => {
             <form  onSubmit={handleSubmit(onSubmit)} >
               <div className="form-control w-full max-w-xs">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text">User name</span>
                 </label>
                 <input
                   type="text"
-                 
+                 name="name"
                   disabled value={user?.displayName || ''}
-                  className="input input-bordered input-primary w-full max-w-xs"
-                  
-                 
+                  className="input input-bordered input-primary w-full max-w-xs"        
                 />
                 <label className="label">
                 </label>
@@ -135,7 +133,7 @@ const PurchaseItem = () => {
                 </label>
                 <input
                   type="email"
-                
+                 name="email"
                   disabled value={user?.email || ''}
                   className="input input-bordered input-primary w-full max-w-xs"
                 />
@@ -144,11 +142,11 @@ const PurchaseItem = () => {
               </div>
               <div className="form-control w-full max-w-xs">
                 <label className="label">
-                  <span className="label-text">Product</span>
+                  <span className="label-text">Product name</span>
                 </label>
                 <input
                   type="text"
-                
+                  name="product_name"
                   disabled value={purchaseItems?.name || ''}
                   className="input input-bordered input-primary w-full max-w-xs"
                 />
@@ -209,15 +207,23 @@ const PurchaseItem = () => {
               </div>
               <div className="form-control w-full max-w-xs">
                 <label className="label">
-                  <span className="label-text">Phone Number</span>
+                  <span className="label-text">Phone number</span>
                 </label>
                 <input
                   type="text"
                   name="phone"
-                  placeholder="Phone Number"
+                  placeholder="Phone number"
                   className="input input-bordered input-primary  w-full max-w-xs"
+                  {...register("phone", {
+                    required: {
+                        value: true,
+                        message: 'Phone number is required'
+                    }
+                })} 
                 />
-                <label className="label"></label>
+          <label className="label">
+               {errors.phone?.type === 'required' && <span className="label-text-alt text-red-500">{errors.phone.message}</span>} 
+            </label>
               </div>
               <input
                 className="btn btn-accent text-orange-800 font-bold  w-full max-w-xs text-white"
