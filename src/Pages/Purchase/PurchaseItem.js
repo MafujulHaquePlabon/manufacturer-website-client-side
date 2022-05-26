@@ -196,10 +196,15 @@ const PurchaseItem = () => {
                   name="address"
                   placeholder="Your Address"
                   className="input input-bordered input-primary w-full max-w-xs"
-                  
+                  {...register("address", {
+                    required: {
+                        value: true,
+                        message: 'Address is required'
+                    }
+                })} 
                 />
                  <label className="label">
-                
+               {errors.address?.type === 'required' && <span className="label-text-alt text-red-500">{errors.address.message}</span>} 
             </label>
               </div>
               <div className="form-control w-full max-w-xs">
