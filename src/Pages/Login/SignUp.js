@@ -4,8 +4,8 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
-//import useToken from '../../hooks/useToken';
 import googleIcon from "../Home/images/googleIcone.png"
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -19,7 +19,7 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-   // const [token]  = useToken(user || gUser);
+    const [token]  = useToken(user || gUser);
 
     const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ const SignUp = () => {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
 
-     if (/* token */ user || gUser) {
+     if ( token /*  user || gUser */) {
         navigate('/home');
       /*   navigate('/appointment'); */
     } 

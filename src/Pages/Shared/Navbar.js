@@ -5,11 +5,15 @@ import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import CarMLogo from "../Home/images/CarMLogo.webp"
 import userImg from "../Home/images/userImg.jpg"
+import Loading from './Loading';
 
 
 const Navbar = () => {
 
-    const [user] = useAuthState(auth);
+    const [user,loading] = useAuthState(auth);
+    if(loading){
+        <Loading></Loading>
+    }
 
      const logout = () => {
         signOut(auth);
@@ -25,11 +29,13 @@ const Navbar = () => {
         {
             user && <li><Link to="/dashboard"> <button className="font-semibold hover:text-orange-800">Dashboard</button> </Link></li>
         }    
-        <li>{user ? <button className="btn btn-ghost font-semibold  hover:text-orange-800 " onClick={logout} >Sign Out</button> : <Link to="/Login"><button className="font-semibold hover:text-orange-800">Login</button></Link>}</li>
+        <li>{user ? <button className="btn btn-ghost font-semibold  hover:text-orange-800 " onClick={logout} >Sign Out</button> : <Link to="/Login"><button className="font-semibold hover:text-orange-800">Login</button></Link>}</li>    
         {
+           
             user && <li><button className="font-bold text-orange-900 "><img style={{width:"24px",
-            height:"24px"}} src={userImg} alt="" />({user.displayName})</button></li>
+            height:"24px"}} src={userImg} alt="" />{user?.displayName}</button></li>
         }
+          
     </>
     return (
         <div className="navbar bg-base-100 ">

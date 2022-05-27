@@ -37,8 +37,7 @@ const PurchaseItem = () => {
         price:purchaseItems.price,
         address:data.address,
         quantity:data.quantity,
-        phone:data.phone
-        
+        phone:data.phone 
     }
     
     fetch('http://localhost:5000/orders', {
