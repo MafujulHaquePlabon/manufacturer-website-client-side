@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-
-//import { format } from 'date-fns';
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
@@ -9,6 +7,7 @@ import { toast } from 'react-toastify';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format } from "date-fns";
+import correct from "../Home/images/correct.png"
 
 
 const PurchaseItem = () => {
@@ -17,6 +16,7 @@ const PurchaseItem = () => {
   const [reload, SetIsReload] = useState(true);
   const [user, loading, error] = useAuthState(auth);
   const [date, setDate] = useState(new Date());
+  const img = <img src={correct} alt="" />
   
   const formattedDate = format(date, 'PP');
   const { register, formState: { errors }, handleSubmit } = useForm();
@@ -26,8 +26,9 @@ const PurchaseItem = () => {
       .then((data) => setPurchaseItems(data));
   }, [ reload ]);
  
-  const onSubmit =  data => {
+  const onSubmit = ( data,e) => {
         console.log(data)
+        e.target.reset();
    const orders = {
         userName:user.displayName,
         email: user.email,
@@ -39,6 +40,7 @@ const PurchaseItem = () => {
         phone:data.phone
         
     }
+    
     fetch('http://localhost:5000/orders', {
       method: 'POST',
       headers: {
@@ -49,8 +51,8 @@ const PurchaseItem = () => {
       .then(res => res.json())
       .then(data => {
           if(data){
-              toast(`Your Order is successfully${formattedDate}`)
-              data.reset();
+              toast(`Your Order is successfully today ${formattedDate}`)
+            
           }
       });
     
