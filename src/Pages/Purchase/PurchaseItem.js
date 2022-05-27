@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
-//import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format } from "date-fns";
@@ -17,6 +17,7 @@ const PurchaseItem = () => {
   const [reload, SetIsReload] = useState(true);
   const [user, loading, error] = useAuthState(auth);
   const [date, setDate] = useState(new Date());
+  
   const formattedDate = format(date, 'PP');
   const { register, formState: { errors }, handleSubmit } = useForm();
   useEffect(() => {
@@ -24,64 +25,38 @@ const PurchaseItem = () => {
       .then((res) => res.json())
       .then((data) => setPurchaseItems(data));
   }, [ reload ]);
-    
- /*  const handleUpdateInventoryItem = (event) => {
-    event.preventDefault();
-    const quantity =
-      parseInt(event.target.quantity.value) + parseInt(purchaseItems.quantity);
-    const updatedCarPartsItems = { quantity };
-    // send data to the server
-    const url = `http://localhost:5000/carPartsItems/${id}`;
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedCarPartsItems),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        SetIsReload(!reload);
-        console.log("success", data);
-        alert("CarPartsItems Quantity added successfully!!!");
-        event.target.reset();
-      });
-  }; */
-  /* const handleDeliveredInventoryItem = () => {
-    const quantity = parseInt(purchaseItems.available_quantity) - 1;
-    const updatedCarPartsItems = { quantity };
-    // send data to the server
-    const url = `http://localhost:5000/carPartsItems/${id}`;
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedCarPartsItems),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        SetIsReload(!reload);
-        console.log("success", data);
-        alert("CarPartsItems Quantity Delivered successfully!!!");
-      });
-  }; */
-  /*  let handleQuantityBlur =event=>{
-      event.preventDefault()
-     
-      console.log(event.target.value)
-  }  */
-  const onSubmit = async data => {
-    console.log(data)
-    const orderTotalQty=data.quantity;
-    const purchaseItemPrice=purchaseItems.price;
-    const totalQuantityPrice = parseInt(orderTotalQty)* parseInt(purchaseItemPrice) ;
-    if(totalQuantityPrice){
-      alert(totalQuantityPrice);
+ 
+  const onSubmit =  data => {
+        console.log(data)
+   const orders = {
+        userName:user.displayName,
+        email: user.email,
+        productName: purchaseItems.name,
+        date: formattedDate,
+        price:purchaseItems.price,
+        address:data.address,
+        quantity:data.quantity,
+        phone:data.phone
+        
     }
-   // await createUserWithEmailAndPassword(data.email, data.password);
-   // await updateProfile({ displayName: data.name });
-   // console.log('update done');
+    fetch('http://localhost:5000/orders', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(orders)
+    })
+      .then(res => res.json())
+      .then(data => {
+          if(data){
+              toast(`Your Order is successfully${formattedDate}`)
+              data.reset();
+          }
+      });
+    
+   
+
+
 }
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 mx-10 gap-5">
@@ -164,7 +139,7 @@ const PurchaseItem = () => {
                 </label>
             
                 <input
-                 
+               
                 
                   type="number"
                   name="quantity"
@@ -235,6 +210,7 @@ const PurchaseItem = () => {
                 </label>
                 
                 <input
+              
                   type="number"
                   name="phone"
                   placeholder="Phone number"

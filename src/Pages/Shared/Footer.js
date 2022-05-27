@@ -1,6 +1,7 @@
 import React from "react";
 import footer from "../Home/images/footer.png";
 import linkedin from "../Home/images/linkedin.png"
+import instagram from "../Home/images/instagram.jpg"
 
 const Footer = () => {
   return (
@@ -33,7 +34,7 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
         </div>
         <div>
-          <span className="footer-title">Social</span>
+          <span className="footer-title ">Social</span>
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg
@@ -70,6 +71,8 @@ const Footer = () => {
             </a>
            <a href=""> <img style={{width:"24px",
                 height:"24px"}} src={linkedin} alt="" /> </a>
+           <a href=""> <img style={{width:"30px",
+                height:"30px"}} src={instagram} alt="" /> </a>
           </div>
         </div>
       </div>

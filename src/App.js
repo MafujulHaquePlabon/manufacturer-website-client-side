@@ -12,6 +12,8 @@ import AddAReview from './Pages/Dashboard/AddAReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
           </Route>
       
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
