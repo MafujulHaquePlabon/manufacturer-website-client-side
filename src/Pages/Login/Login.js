@@ -16,39 +16,27 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-
-   // const [token] = useToken(user || gUser);
-
+   // const [token] = useToken(user || gUser)
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-   /*   useEffect( () =>{
-        if (token) {
+    //  useEffect( () =>{
+        if (/* token */user || gUser) {
             navigate(from, { replace: true });
         }
-    }, [token, from, navigate])
- */
-
-    if (/* ata pore rahkbo na */ user || gUser) {
-        navigate('/home');
-     
-    } 
+    //}, [/* token, */ from, navigate])
      if ( loading || gLoading) {
         return <Loading></Loading>
-     
     } 
- 
     if(error || gError){
         signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
     }
-
      const onSubmit = data => {
          console.log(data)
         signInWithEmailAndPassword(data.email, data.password);
     } 
-
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
