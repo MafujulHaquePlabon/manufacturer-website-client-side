@@ -28,10 +28,10 @@ const Dashboard = () => {
            <Link to="/dashboard/users"><button className="font-semibold hover:text-orange-800">Make_Admin</button></Link>
          </li>
              <li>
-           <Link to="/dashboard/Add_a_product"><button className="font-semibold hover:text-orange-800">Add A Product</button></Link>
+           <Link to="/dashboard/Add_a_product"><button className="font-semibold hover:text-orange-800">Add_A_Product</button></Link>
          </li>
              <li>
-           <Link to="/dashboard/manage_products"><button className="font-semibold hover:text-orange-800">Manage Products</button></Link>
+           <Link to="/dashboard/manage_products"><button className="font-semibold hover:text-orange-800">Manage_Products</button></Link>
            <Link to="/dashboard/Manage_all_orders"><button className="font-semibold hover:text-orange-800">Manage_All_Orders</button></Link>
          </li>
            </div>: <div>

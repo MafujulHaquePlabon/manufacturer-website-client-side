@@ -73,8 +73,8 @@ const Blog = () => {
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             </span>
-            you need to make sure that components receive only necessary props.
-            It will let you control the CPU consumption and avoid over-rendering
+            I need to make sure that components receive only necessary props.
+            It will let i control the CPU consumption and avoid over-rendering
             unnecessary features. The solution is to create a functional
             component that will collect all props and redistribute them to other
             components.
@@ -90,8 +90,8 @@ const Blog = () => {
             application?
           </h2>
           <h5 className="">
-            There are four main types of state you need to properly manage in
-            your React apps:
+            There are four main types of state i need to properly manage in
+            my React apps:
           </h5>
           <p className="flex justify-center items-center ">
             <span>
@@ -234,7 +234,7 @@ const Blog = () => {
             {" "}
             How does prototypical inheritance work?
           </h2>
-          <p></p>
+          <p>prototypical inheritance refers to the ability to access object properties from another object. We use a JavaScript prototype to add new properties and methods to an existing object constructor. We can then essentially tell our JS code to inherit properties from a prototype.</p>
           <div className="card-actions"></div>
         </div>
       </div>
@@ -268,7 +268,50 @@ const Blog = () => {
             {" "}
             What is a unit test? Why should write unit tests?
           </h2>
-          <p></p>
+          <div><p className="flex">
+          <span><svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg></span> 
+              <span>
+              A unit test is a way of testing a unit - the smallest piece of code that can be logically isolated in a system. In most programming languages, that is a function, a subroutine, a method or property.
+              </span>
+          </p>
+            
+         
+         </div>
+          <div><p className="flex">
+          <span><svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg></span> 
+              <span>
+              you write unit tests before writing any implementation. This makes your implementation details in your code shorter and easier to understand. In this instance, the best time to write unit tests is immediately. For others, most developers write unit tests after the code's been written.
+              </span>
+          </p>
+            
+         
+         </div>
           <div className="card-actions"></div>
         </div>
       </div>
