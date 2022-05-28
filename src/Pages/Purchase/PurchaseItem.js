@@ -27,7 +27,7 @@ const PurchaseItem = () => {
   }, [ reload ]);
  
   const onSubmit = ( data,e) => {
-        console.log(data)
+       // console.log(data)
         e.target.reset();
    const orders = {
         userName:user.displayName,
@@ -54,10 +54,6 @@ const PurchaseItem = () => {
             
           }
       });
-    
-   
-
-
 }
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 mx-10 gap-5">

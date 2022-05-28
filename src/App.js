@@ -14,6 +14,8 @@ import MyOrders from './Pages/Dashboard/MyOrders';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import NotFound from "./Pages/NotFound/NotFound"
+import PurchaseIfOrder from './Pages/PurchaseIfOrder/PurchaseIfOrder';
 
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
         <Route path="/" element={<Home></Home>} />
         <Route path="/home" element={<Home></Home>} />
         <Route path="/blog" element={<Blog></Blog>} />
+        <Route path="/purchase" element={<PurchaseIfOrder></PurchaseIfOrder>} />
         <Route path="/carPartsItems/:id" element={<RequireAuth><PurchaseItem></PurchaseItem></RequireAuth>} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Login" element={<Login></Login>} />
@@ -33,7 +36,7 @@ function App() {
           <Route path="/dashboard/add_a_review" element={<AddAReview></AddAReview>}></Route>
           <Route path="/dashboard/my_profile" element={<MyProfile></MyProfile>}></Route>
           </Route>
-      
+          <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>

@@ -22,7 +22,7 @@ const Navbar = () => {
 
     const menuItems = <>
         <li><Link to="/"><button className="font-semibold hover:text-orange-800 ">Home</button></Link></li>
-        <li><Link to="/carPartsItems"><button className="font-semibold hover:text-orange-800">Purchase</button></Link></li>
+        <li><Link to="/purchase"><button className="font-semibold hover:text-orange-800">Purchase</button></Link></li>
        
         <li><Link to="/blog"><button className="font-semibold hover:text-orange-800">Blogs</button></Link></li>
         <li><Link to="/my_portfolio"><button className="font-semibold hover:text-orange-800">My_Portfolio</button></Link></li>
