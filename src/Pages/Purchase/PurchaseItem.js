@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
-import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format } from "date-fns";
-import correct from "../Home/images/correct.png"
-
 
 const PurchaseItem = () => {
   const { id } = useParams();
@@ -16,16 +13,19 @@ const PurchaseItem = () => {
   const [reload, SetIsReload] = useState(true);
   const [user, loading, error] = useAuthState(auth);
   const [date, setDate] = useState(new Date());
-  const img = <img src={correct} alt="" />
-  
+  const navigate = useNavigate();
   const formattedDate = format(date, 'PP');
+
   const { register, formState: { errors }, handleSubmit } = useForm();
   useEffect(() => {
     fetch(` http://localhost:5000/carPartsItems/${id}`)
       .then((res) => res.json())
       .then((data) => setPurchaseItems(data));
   }, [ reload ]);
- 
+
+  const handleHomePageClick = () => {
+    navigate("/home");
+     }
   const onSubmit = ( data,e) => {
        // console.log(data)
         e.target.reset();
@@ -54,9 +54,11 @@ const PurchaseItem = () => {
             
           }
       });
+        
 }
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 mx-10 gap-5">
+    <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 mx-10 gap-5">
       <div className="card  bg-base-100 shadow-xl  mx-5">
         <figure className="px-10 pt-10">
           <img
@@ -234,6 +236,18 @@ const PurchaseItem = () => {
           </div>
         </div>
       </div>
+    </div>
+    <div className=" flex justify-center my-10">
+    <div className="flex justify-center items-center  text-xl font-semibold  ">
+      <h1>Welcome! please Purchase more orders from the Home page </h1>
+      <input
+        onClick={handleHomePageClick}
+        className=" text-green-800 underline ml-2 text-xl font-bold"
+        type="submit"
+        value="Back home page"
+      />
+    </div>
+  </div>
     </div>
   );
 };
