@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import UserRow from "./UserRow";
 
-const Users = () => {
+const AllUsers = () => {
   const {
     data: users,
     isLoading,
@@ -21,7 +21,7 @@ const Users = () => {
   }
   return (
     <div>
-      <h2 className="text-2xl">All Users: {users.length}</h2>
+      <h2 className="text-xl font-semibold">All Users: {users.length}</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
@@ -43,4 +43,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default AllUsers;

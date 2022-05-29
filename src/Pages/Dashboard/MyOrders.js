@@ -60,9 +60,9 @@ const MyOrders = () => {
                 <td>{order.userName}</td>
                 <td>{order.date}</td>
                 <td>{order.email}</td>
-                <td>{order.quantity}</td>
-                <td>{order.price}</td>
-                <td>{order.quantity * order.price}</td>
+                <td>{order.quantity} pcs</td>
+                <td>{order.price} $</td>
+                <td>{order.quantity * order.price} $</td>
                 <td>
                   {" "}
                   {order.price && !order.paid && (

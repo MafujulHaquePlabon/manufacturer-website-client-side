@@ -73,13 +73,13 @@ const PurchaseItem = () => {
           <div className="card-body items-center text-center">
             <h2 className="card-title ">Product name: {purchaseItems.name}</h2>
             <h1 className="text-xl font-semibold">
-              Price: {purchaseItems.price}
+              Price: {purchaseItems.price} $
             </h1>
             <h1 className="text-xl font-semibold">
-              Available_quantity: {purchaseItems.available_quantity}
+              Available_quantity: {purchaseItems.available_quantity} pcs
             </h1>
             <h1 className="text-xl font-semibold">
-              Minimum_order_quantity: {purchaseItems.minimum_order_quantity}
+              Minimum_order_quantity: {purchaseItems.minimum_order_quantity} pcs
             </h1>
             <p className="font-serif ...">
               <span className="font-semibold font-serif ...">Description:</span>

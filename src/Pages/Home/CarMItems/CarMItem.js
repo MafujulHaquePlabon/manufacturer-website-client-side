@@ -29,12 +29,12 @@ const CarMItem = (props) => {
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title ">Product name: {name}</h2>
-        <h1 className="text-xl font-semibold">Price: {price}</h1>
+        <h1 className="text-xl font-semibold">Price: {price} $</h1>
         <h1 className="text-xl font-semibold">
-          Available_quantity: {available_quantity}
+          Available_quantity: {available_quantity} pcs
         </h1>
         <h1 className="text-xl font-semibold">
-          Minimum_order_quantity: {minimum_order_quantity}
+          Minimum_order_quantity: {minimum_order_quantity} pcs
         </h1>
         <p className="font-serif ...">
           <span className="font-semibold font-serif ...">Description:</span>
