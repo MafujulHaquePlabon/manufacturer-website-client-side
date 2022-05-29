@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 
 const AddAProduct = () => {
+  
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const { data:product , isLoading } = useQuery('product', () => fetch('https://safe-shore-51251.herokuapp.com/carPartsItems').then(res => res.json()))
