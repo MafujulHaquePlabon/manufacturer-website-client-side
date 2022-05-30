@@ -67,13 +67,15 @@ const MyOrders = () => {
                   {" "}
                   {order.price && !order.paid && (
                     <Link to={`/dashboard/payment/${order._id}`}>
+                      
                       <button className="btn btn-xs btn-error hover:bg-red-500 hover:text-white">
                         Delete
+                        
                       </button>
-                    </Link>
+                   </Link>
                   )}
                 </td>
-                {/*  <td>{order.treatment}</td> */}
+              
                 <td>
                   {order.price && !order.paid && (
                     <Link to={`/dashboard/payment/${order._id}`}>

@@ -7,10 +7,7 @@ import "./CarMItem"
 
 const CarMItems = () => {
     const [items,setItems]= useItems();
-    /* const navigate=useNavigate();
-    const navigateManageInventories=()=>{
-        navigate('/ManageInventories');
-    } */
+   
     return (
       <div>
           <h2 className="mt-5  text-xl font-bold text-center my-5 ">Our <span className="text-orange-800">Car Parts Manufacturer</span> Products:</h2>

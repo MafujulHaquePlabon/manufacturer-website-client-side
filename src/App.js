@@ -15,13 +15,14 @@ import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NotFound from "./Pages/NotFound/NotFound";
-import BeforeOrderPurchasePage from "./Pages/BeforeOrderPurchasePage/BeforeOrderPurchasePage";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
 import AddAProduct from "./Pages/Dashboard/AddAProduct";
 import ManageProducts from "./Pages/Dashboard/ManageProducts";
 import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders";
 import AllUsers from "./Pages/Dashboard/AllUsers";
 import Payment from "./Pages/Dashboard/Payment";
+import BeforeOrderPurchasePage from "./Pages/BeforeOrderPurchasePage/PurchaseIfOrder";
+
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
       
         <Route
           path="/purchase"
-          element={<BeforeOrderPurchasePage></BeforeOrderPurchasePage>}
+          element={<BeforeOrderPurchasePage ></BeforeOrderPurchasePage>}
         />
         <Route
           path="/carPartsItems/:id"
