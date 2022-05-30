@@ -37,7 +37,7 @@ const MyOrders = () => {
 
   return (
     <div>
-      <h2>My orders: {orders.length}</h2>
+      <h2 className="text-xl font-semibold">My orders: {orders.length}</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

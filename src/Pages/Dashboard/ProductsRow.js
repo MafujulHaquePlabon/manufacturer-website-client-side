@@ -1,9 +1,9 @@
 import React from "react";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 
 const ProductsRow = ({ product, index, refetch, setDeletingProduct }) => {
   const { name,Product_Price
-    , img, _id } = product;
+    , img } = product;
 
   return (
     <tr>

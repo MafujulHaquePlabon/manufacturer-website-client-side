@@ -54,7 +54,7 @@ const PurchaseItem = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          toast(`Your Order is successfully today ${formattedDate}`);
+          toast.success(`Your Order is successfully today ${formattedDate}`);
         }
       });
   };
