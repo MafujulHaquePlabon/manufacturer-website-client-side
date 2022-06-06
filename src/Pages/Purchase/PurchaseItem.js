@@ -79,7 +79,7 @@ const PurchaseItem = () => {
               Available_quantity: {purchaseItems.available_quantity} pcs
             </h1>
             <h1 className="text-xl font-semibold">
-              Minimum_order_quantity: {purchaseItems.minimum_order_quantity} pcs
+              Minimum_order_quantity: {purchaseItems.minimum_order_quantity} (pcs)
             </h1>
             <p className="font-serif ...">
               <span className="font-semibold font-serif ...">Description:</span>
